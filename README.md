@@ -11,6 +11,50 @@ Tutorial ini membahas cara install PostgreSQL multi versi menggunakan `asdf` di 
 - ASDF sudah terinstall (`brew install asdf`)
 
 ---
+Jika belum memiliki ASDF bisa mengikuti langkah-langkah sebagai berikut:
+
+1. **Install asdf lewat Homebrew**
+
+```bash
+brew install asdf
+````
+
+2. **Tambahkan asdf ke shell (zsh)**
+
+Buka file konfigurasi zsh kamu:
+
+```bash
+nano ~/.zshrc
+```
+
+Lalu tambahkan baris berikut di akhir file:
+
+```bash
+. $(brew --prefix asdf)/libexec/asdf.sh
+```
+
+3. **Reload shell**
+
+```bash
+source ~/.zshrc
+```
+
+4. **Cek instalasi**
+
+```bash
+asdf --version
+```
+
+Kalau muncul versi asdf, berarti sudah berhasil.
+
+---
+
+## 2. Install Plugin PostgreSQL di asdf
+
+```bash
+asdf plugin-add postgres
+```
+
 
 ## 1. Install PostgreSQL Versi 17.2 dengan asdf
 
