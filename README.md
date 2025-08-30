@@ -153,8 +153,14 @@ pg-stop() {
 }
 
 psql() {
-  local ver=${1:-17.2}
-  shift
+  local ver=17.2
+
+  # kalau argumen pertama cocok pola versi (misal 15.5 atau 17.2)
+  if [[ $1 =~ ^[0-9]+\.[0-9]+$ ]]; then
+    ver=$1
+    shift
+  fi
+
   ~/.asdf/installs/postgres/$ver/bin/psql "$@"
 }
 ```
